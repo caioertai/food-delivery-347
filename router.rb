@@ -16,6 +16,8 @@ class Router
         puts '2. List available meals'
         puts '3. Add a customer'
         puts '4. List customers'
+        puts '9. To sign out'
+        puts '0. To leave'
 
         puts 'What do you want to do next?'
         print '> '
@@ -33,6 +35,8 @@ class Router
       else
         puts '1. Show my undelivered orders'
         puts '2. Mark an order of mine as delivered'
+        puts '9. To sign out'
+        puts '0. To leave'
 
         puts 'What do you want to do next?'
         print '> '

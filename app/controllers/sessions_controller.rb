@@ -17,6 +17,12 @@ class SessionsController
     # 4 CHECK if the user matches its password
 
     # 5 Return the employee if password matches
-    employee&.password == password ? employee : nil
+    if employee&.password == password
+      @view.greet(employee)
+      employee
+    else
+      @view.wrong_credentials
+      nil
+    end
   end
 end
