@@ -6,7 +6,7 @@ class MealRepository < BaseRepository
 
   def load_csv
     csv_options = { headers: :first_row, header_converters: :symbol }
-    CSV.foreach(@csv_file, csv_options) do |row|
+    CSV.foreach(@csv_file_path, csv_options) do |row|
       row[:id]    = row[:id].to_i
       row[:price] = row[:price].to_i
       @elements << Meal.new(row)

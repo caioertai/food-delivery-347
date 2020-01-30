@@ -1,8 +1,16 @@
-require_relative "app/models/employee"
+require_relative "app/repositories/meal_repository"
 require_relative "app/repositories/employee_repository"
+require_relative "app/repositories/customer_repository"
+require_relative "app/repositories/order_repository"
 
-p Employee.new(username: "john", password: "secret", role: "manager")
+employees_csv_path = "data/employees.csv"
+employee_repository = EmployeeRepository.new(employees_csv_path)
 
-employee_repository = EmployeeRepository.new("data/employee.csv")
+customers_csv_path = "data/customers.csv"
+customer_repository = CustomerRepository.new(customers_csv_path)
 
-p employee_repository
+meals_csv_path = "data/meals.csv"
+meal_repository = MealRepository.new(meals_csv_path)
+
+orders_csv_path = "data/orders.csv"
+order_repository = OrderRepository.new(orders_csv_path, meal_repository, employee_repository, customer_repository)
